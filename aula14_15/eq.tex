@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} %margens
+\usepackage[utf8]{inputenc}%assim aparecem os acentos
+
+
+\usepackage[utf8]{inputenc}    
+\usepackage[brazil]{babel}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=Python,                
+  basicstyle=\footnotesize,           
+  numbers=left,                   
+  numberstyle=\tiny\color{gray},  
+  stepnumber=1,                             
+  numbersep=5pt,                  
+  backgroundcolor=\color{white},    
+  showspaces=false,               
+  showstringspaces=false,         
+  showtabs=false,                 
+  frame=single,                   
+  rulecolor=\color{black},        
+  tabsize=2,                      
+  captionpos=b,                   
+  breaklines=true,                
+  breakatwhitespace=false,        
+  title=\lstname,                               
+  keywordstyle=\color{blue},          
+  commentstyle=\color{dkgreen},       
+  stringstyle=\color{mauve},     
+}
+
+\begin{document}
+
+ 
+
+
+\begin{center}
+    \textbf{Métodos numéricos para solução de EDOs}
+\end{center}
+
+\begin{center}
+    \textbf{Método de Euler:} $y_{n+1} = y_n + f(t_n,y_n)h$
+\end{center}
+
+
+\textbf{Exemplo 1:} $y' = 1 - t + 4y$
+
+\begin{lstlisting}
+    import numpy as np
+    import matplotlib.pylab as plt
+    
+    
+    def f(t, y):
+        return 1 - t + 4*y
+    
+    
+    def EDO_euler(f, y0, t0, NUMBER_OF_STEPS=100, h=0.01):
+    
+        y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+        t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+    
+        y[0] = 1
+        t[0] = 0
+    
+        for n in range(0, NUMBER_OF_STEPS - 1):
+            K1 = f(t[n], y[n])
+            y[n+1] = y[n] + K1*h  
+            t[n+1] = t[n]+h  
+    
+        return (t, y)
+    
+    
+    t, y = EDO_euler(f, 1, 0) 
+    plt.plot(t, y)
+    plt.show()
+
+\end{lstlisting}
+\end{document}

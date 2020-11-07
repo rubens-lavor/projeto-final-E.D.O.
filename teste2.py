@@ -112,8 +112,7 @@ def rungekutta(h, NUMBER_OF_STEPS):
 
     for n in range(1, NUMBER_OF_STEPS):
 
-        K1 = f(x1[n-1],                     x2[n-1],
-               x3[n-1],                     x4[n-1],                    t[n-1])
+        K1 = f(x1[n-1],x2[n-1], x3[n-1], x4[n-1], t[n-1])
         K2 = f(x1[n-1] + K1[0] * 0.5 * h, x2[n-1] + K1[1] * 0.5 * h, x3[n-1] +
                K1[2] * 0.5 * h, x4[n-1] + K1[3] * 0.5 * h, t[n-1] + 0.5 * h)
         K3 = f(x1[n-1] + K2[0] * 0.5 * h, x2[n-1] + K2[1] * 0.5 * h, x3[n-1] +
