@@ -20,11 +20,18 @@ K2y = f_y(x_n + h*K1x , y_n + h*K1y , t_n + h)
 
 """
 
+"""
+
+    euler e euler melhorado (heun) para sistemas.
+
+"""
+
 import numpy as np
 import matplotlib.pylab as plt
 
 
-def fx(t, x, y):  # FUNÇÃO QUE DEFINE A EDO (derivada)
+def fx(t, r):  # FUNÇÃO QUE DEFINE A EDO (derivada)
+    x, y  = r
     a = 1.1
     b = 0.4
     c = 0.4
@@ -33,73 +40,49 @@ def fx(t, x, y):  # FUNÇÃO QUE DEFINE A EDO (derivada)
 
 
 
-def EDO_euler(f, y0, t0, NUMBER_OF_STEPS=100, h=0.01):
-    # recebe a função derivada, y(0) e t(0),
-    # os demais paramentros são definidos, não precisa passar
+def EDO_euler_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
 
-    y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+    NUMBER_OF_EQUATIONS = len(r0)
+
+    r = np.zeros([NUMBER_OF_STEPS, NUMBER_OF_EQUATIONS], dtype=np.float32)
     t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
 
-    y[0] = 1
-    t[0] = 0
-
-    for n in range(0, NUMBER_OF_STEPS - 1):
-        K1 = f(t[n], y[n])
-        y[n+1] = y[n] + K1*h  # fórmula iterativa do método de euler
-        t[n+1] = t[n]+h  # próximo passo de tempo
-
-    return (t, y)
-
-
-def EDO_heun(f, y0, t0, NUMBER_OF_STEPS=100, h=0.01):
-    # recebe a função derivada, y(0) e t(0),
-    # os demais paramentros são definidos, não precisa passar
-
-    y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
-    t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
-
-    y[0] = 1
-    t[0] = 0
+    r[0] = r0
+    t[0] = t0
 
     for n in range(0, NUMBER_OF_STEPS - 1):
         t[n+1] = t[n]+h
-        K1 = f(t[n], y[n])
-        K2 = f(t[n+1], y[n] + K1*h)
-        y[n+1] = y[n] + 0.5*(K1 + K2)*h  # fórmula iterativa do método de euler
+        K1= fx(t[n],r[n])
 
-    return (t, y)
+        r[n+1] = r[n] + K1*h
 
+    return (t, r)
 
 def EDO_heun_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
 
     NUMBER_OF_EQUATIONS = len(r0)
 
-    x = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
-    y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+    r = np.zeros([NUMBER_OF_STEPS, NUMBER_OF_EQUATIONS], dtype=np.float32)
     t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
 
-    x[0], y[0] = r0
+    r[0] = r0
     t[0] = t0
 
     for n in range(0, NUMBER_OF_STEPS - 1):
         t[n+1] = t[n]+h
-        K1x, K1y = fx(t[n],x[n] ,y[n])
-        K2x, K2y = fx(t[n+1],x[n] + K1x*h ,y[n] + K1y*h )
+        K1= fx(t[n],r[n])
+        K2= fx(t[n+1],r[n] + K1*h )
 
-        x[n+1] = x[n] + 0.5*(K1x + K2x)*h
-        y[n+1] = y[n] + 0.5*(K1y + K2y)*h
+        r[n+1] = r[n] + 0.5*(K1+K2)*h
 
-    return (t, x, y)
+    return (t, r)
 
-t,x,y = EDO_heun_sistemas(fx,(10,10), 0 , NUMBER_OF_STEPS = 1000, h = 0.05)
+t,r = EDO_heun_sistemas(fx,(10,10), 0 , NUMBER_OF_STEPS = 1000, h = 0.05)
+
+x=r[:,0]
+y=r[:,1]
 
 plt.plot(t, x)
 plt.plot(t, y)
-
-#te, ye = EDO_euler(fx, 1, 0)
-#th, yh = EDO_heun(fx, 1, 0)
-
-#plt.plot(te, ye, "ro")
-#plt.plot(th, yh, "bs")
 
 plt.show()
