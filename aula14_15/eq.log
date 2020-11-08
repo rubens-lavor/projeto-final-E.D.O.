@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.25)  7 NOV 2020 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.25)  7 NOV 2020 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14/15/eq.tex"
-(/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14/15/eq.tex
+**"/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14_15/eq.tex"
+(/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14_15/eq.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -48,6 +48,60 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen143
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen144
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count178
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count179
+\leftroot@=\count180
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count181
+\DOTSCASE@=\count182
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count183
+\c@MaxMatrixCols=\count184
+\dotsspace@=\muskip16
+\c@parentequation=\count185
+\dspbrk@lvl=\count186
+\tag@help=\toks19
+\row@=\count187
+\column@=\count188
+\maxfields@=\count189
+\andhelp@=\toks20
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/02/14 3.40 The Babel package
  (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
@@ -56,33 +110,33 @@ File: switch.def 2020/02/14 3.40 Babel switching mechanism
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
  (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count178
-\U@D=\dimen143
+\babel@savecnt=\count190
+\U@D=\dimen152
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count179
+\bbl@dirlevel=\count191
 )
 Package babel Info: \l@brazil = using hyphenrules for portuguese
 (babel)             (\language43) on input line 113.
 Package babel Info: Making " an active character on input line 145.
 )) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count180
-\lst@gtempboxa=\box45
-\lst@token=\toks18
-\lst@length=\count181
-\lst@currlwidth=\dimen144
-\lst@column=\count182
-\lst@pos=\count183
-\lst@lostspace=\dimen145
-\lst@width=\dimen146
-\lst@newlines=\count184
-\lst@lineno=\count185
-\lst@maxwidth=\dimen147
+\lst@mode=\count192
+\lst@gtempboxa=\box47
+\lst@token=\toks23
+\lst@length=\count193
+\lst@currlwidth=\dimen153
+\lst@column=\count194
+\lst@pos=\count195
+\lst@lostspace=\dimen154
+\lst@width=\dimen155
+\lst@newlines=\count196
+\lst@lineno=\count197
+\lst@maxwidth=\dimen156
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count186
-\lst@skipnumbers=\count187
-\lst@framebox=\box46
+\c@lstnumber=\count198
+\lst@skipnumbers=\count199
+\lst@framebox=\box48
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
@@ -99,9 +153,9 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count188
-\l__pdf_internal_box=\box47
-) (/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14/15/eq.aux)
+\l__kernel_color_stack_int=\count266
+\l__pdf_internal_box=\box49
+) (/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14_15/eq.aux)
 \openout1 = `eq.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -153,47 +207,36 @@ LaTeX Font Info:    ... okay on input line 38.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count189
+\c@lstlisting=\count267
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count190
-\scratchdimen=\dimen148
-\scratchbox=\box48
-\nofMPsegments=\count191
-\nofMParguments=\count192
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count193
-\MPscratchDim=\dimen149
-\MPnumerator=\count194
-\makeMPintoPDFobject=\count195
-\everyMPtoPDFconversion=\toks20
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 60.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 60.
- [1
+\scratchcounter=\count268
+\scratchdimen=\dimen157
+\scratchbox=\box50
+\nofMPsegments=\count269
+\nofMParguments=\count270
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count271
+\MPscratchDim=\dimen158
+\MPnumerator=\count272
+\makeMPintoPDFobject=\count273
+\everyMPtoPDFconversion=\toks25
+) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14/15/eq.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14_15/eq.aux) ) 
 Here is how much of TeX's memory you used:
- 3878 strings out of 481239
- 53835 string characters out of 5920377
- 562093 words of memory out of 5000000
- 19149 multiletter control sequences out of 15000+600000
- 535716 words of font info for 35 fonts, out of 8000000 for 9000
+ 4509 strings out of 481239
+ 60943 string characters out of 5920377
+ 643075 words of memory out of 5000000
+ 19762 multiletter control sequences out of 15000+600000
+ 536844 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,5n,40p,271b,1235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,6n,40p,274b,1233s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14/15/eq.pdf" (1 page, 93023 bytes).
+Output written on "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./aula14_15/eq.pdf" (2 pages, 96876 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

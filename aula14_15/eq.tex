@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} %margens
 \usepackage[utf8]{inputenc}%assim aparecem os acentos
-
+\usepackage{amsmath}
 
 \usepackage[utf8]{inputenc}    
 \usepackage[brazil]{babel}
@@ -37,29 +37,30 @@
 
 \begin{document}
 
- 
+
 
 
 \begin{center}
     \textbf{Métodos numéricos para solução de EDOs}
 \end{center}
 
-\begin{center}
-    \textbf{Método de Euler:} $y_{n+1} = y_n + f(t_n,y_n)h$
-\end{center}
-
-
 \textbf{Exemplo 1:} $y' = 1 - t + 4y$
+
 
 \begin{lstlisting}
     import numpy as np
     import matplotlib.pylab as plt
     
-    
     def f(t, y):
         return 1 - t + 4*y
     
-    
+
+\end{lstlisting}
+
+\textbf{Euler:}
+$$y_{n+1} = y_n + f(t_n,y_n)h$$
+\begin{lstlisting}
+
     def EDO_euler(f, y0, t0, NUMBER_OF_STEPS=100, h=0.01):
     
         y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
@@ -74,11 +75,43 @@
             t[n+1] = t[n]+h  
     
         return (t, y)
-    
-    
-    t, y = EDO_euler(f, 1, 0) 
-    plt.plot(t, y)
+
+\end{lstlisting}
+
+\textbf{Euler Melhorado:} 
+$$K_1 = f(t_n,y_n)$$
+$$K_2 = f(t_{n+1}, y_n + hK_1)$$
+$$y_{n+1} = y_n + h(\frac{K_1 + K_2}{2})$$
+
+
+\begin{lstlisting}
+    def EDO_heun(f, y0, t0, NUMBER_OF_STEPS=100, h=0.01):
+        y = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+        t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+
+        y[0] = 1
+        t[0] = 0
+
+        for n in range(0, NUMBER_OF_STEPS - 1):
+            t[n+1] = t[n]+h
+            K1 = f(t[n], y[n])
+            K2 = f(t[n+1], y[n] + K1*h)
+            y[n+1] =  y[n] + 0.5*(K1 + K2)*h
+
+    return (t, y)
+
+\end{lstlisting}
+
+\textbf{Plotando os gráficos}
+\begin{lstlisting}
+
+    te, ye = EDO_euler(f, 1, 0)
+    th, yh = EDO_heun(f, 1, 0)
+
+    plt.plot(te, ye, "ro")
+    plt.plot(th, yh, "bs")
     plt.show()
 
 \end{lstlisting}
+
 \end{document}
