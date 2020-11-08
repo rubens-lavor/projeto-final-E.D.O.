@@ -75,8 +75,7 @@ def eulermelhorado(h, NUMBER_OF_STEPS):
 
     for n in range(1, NUMBER_OF_STEPS):
         vet1 = f(x1[n-1], x2[n-1], x3[n-1], x4[n-1], t[n-1])
-        vet2 = f(x1[n-1] + vet1[0] * h, x2[n-1] + vet1[1] * h,
-                 x3[n-1] + vet1[2] * h, x4[n-1] + vet1[3] * h, t[n-1])
+        vet2 = f(x1[n-1] + vet1[0] * h, x2[n-1] + vet1[1] * h, x3[n-1] + vet1[2] * h, x4[n-1] + vet1[3] * h, t[n-1])
         x1[n] = x1[n-1] + 0.5 * (vet1[0] + vet2[0]) * h
         x2[n] = x2[n-1] + 0.5 * (vet1[1] + vet2[1]) * h
         x3[n] = x3[n-1] + 0.5 * (vet1[2] + vet2[2]) * h
