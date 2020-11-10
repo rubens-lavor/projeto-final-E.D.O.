@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1604966720 "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.tex" "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.pdf" "modelo-matematico" 1604966746
+["pdflatex"] 1604966973 "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.tex" "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.pdf" "modelo-matematico" 1604966974
   "/etc/texmf/web2c/texmf.cnf" 1593128070 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.aux" 1604966720 1310 d514fbf8ad31dad4d6058089a6b7b11d ""
-  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.tex" 1604966746 3264 cdaf971be22e58e75a2d66005883f616 ""
+  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.aux" 1604966973 1310 d514fbf8ad31dad4d6058089a6b7b11d ""
+  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.tex" 1604966973 3314 d94f299e72d0dd8680580af2d6079473 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -86,13 +86,13 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1593128276 8259001 f2d0bfec0fba2c8793aee55a48b0efb0 ""
   "Imagens/img1.png" 1604954285 115998 5808363e3f1745759a2ce46c255f8872 ""
   "Imagens/img2.png" 1604954108 77442 534a3aeeb7000e990e92ccf1613a423d ""
-  "modelo-matematico.aux" 1604966720 1310 d514fbf8ad31dad4d6058089a6b7b11d "pdflatex"
-  "modelo-matematico.out" 1604966720 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "modelo-matematico.tex" 1604966746 3264 cdaf971be22e58e75a2d66005883f616 ""
+  "modelo-matematico.aux" 1604966973 1310 d514fbf8ad31dad4d6058089a6b7b11d "pdflatex"
+  "modelo-matematico.out" 1604966973 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "modelo-matematico.tex" 1604966973 3314 d94f299e72d0dd8680580af2d6079473 ""
   (generated)
-  "modelo-matematico.log"
   "modelo-matematico.aux"
   "modelo-matematico.out"
-  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.log"
   "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.pdf"
+  "/home/rubens/Documentos/Cursos e Materiais/projeto final E.D.O./relatório/modelo-matematico.log"
+  "modelo-matematico.log"
   "modelo-matematico.pdf"
