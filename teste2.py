@@ -232,8 +232,8 @@ pos4 = vet4[0]
 vel4 = vet4[1]
 
 plt.subplot(211)
-#plt.plot( tempo, pos1, color = 'red', label = 'Euler')
-#plt.plot (tempo, pos2, color = 'green', label = 'Euler Melhorado')
+plt.plot( tempo, pos1, color = 'red', label = 'Euler')
+plt.plot (tempo, pos2, color = 'green', label = 'Euler Melhorado')
 plt.plot(tempo, pos3, color='blue', label='Runge-Kutta')
 plt.plot(tempo, pos3, color='yellow', label='Runge-Kutta-Fehlberg')
 plt.legend()
