@@ -49,8 +49,9 @@ def EDO_heun_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
         #y[n+1] =  y[n] + 0.5*(K1 + K2)*h # fórmula iterativa do método de euler melhorado
         #y[n+1] == r[n+1], calculado acima.
 
-    #return (t, y)
-    return (t, r)
+    posicao = r[:,1] - r[:,3]
+    velocidade = r[:,0] - r[:,2]
+    return (t, posicao, velocidade)
 
 t, r = EDO_heun_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 

@@ -114,7 +114,9 @@ def EDO_rkf_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01, alpha = 0.86, tol =
         h = q_minimo*h
         #print ("h =", h)
 
-    return (t, r)
+    posicao = r[:,1] - r[:,3]
+    velocidade = r[:,0] - r[:,2]
+    return (t, posicao, velocidade)
 
 t, r = EDO_rkf_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 

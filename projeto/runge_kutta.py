@@ -56,7 +56,9 @@ def EDO_rk_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
         K4 = f(t[n+1] , r[n] + K3*h)
         r[n+1]=r[n]+(1/6)*(K1 + 2*K2 + 2*K3 + K4)
 
-    return (t, r)
+    posicao = r[:,1] - r[:,3]
+    velocidade = r[:,0] - r[:,2]
+    return (t, posicao, velocidade)
 
 t, r = EDO_rk_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 
