@@ -54,6 +54,48 @@ def f(x1, x2, x3, x4, t):  # FUNÇÃO QUE DEFINE A EDO (derivada)
     return(y1, dy1, y2, dy2)
 """
 
+def rt(t):
+    return (1/10 * mt.exp(-(t-10)**2/7))
+
+def f(t,r):
+    x1,x2,x3,x4 = r
+
+    y1 = x2
+    dy1 = -(7.5 + 50) / 25 * x1 - 30/25 * x2 + 7.5/25 * x3 + 30/25 * x4 + 50/25 * rt(t)
+    y2 = x4
+    dy2 = -7.5/300 * x1 + 30/300 * x2 - 7.5/300 * x3 - 30 / 300 * x4
+
+    return np.array([y1, dy1, y2, dy2])
+
+
+def EDO_euler_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
+    NUMBER_OF_EQUATIONS = len(r0)
+
+    r = np.zeros( [NUMBER_OF_STEPS,NUMBER_OF_EQUATIONS], dtype=np.float32 )
+    t = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
+
+    r[0] = r0
+    t[0] = t0
+
+    for n in range(0, NUMBER_OF_STEPS - 1):
+        t[n+1] = t[n]+h
+        K1 = f(t[n], r[n])
+        r[n+1] = r[n] + K1*h
+
+    return (t, r)
+
+t, r = EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+
+pos1 = r[:,1] - r[:,3]
+vel1 = r[:,0] - r[:,2]
+
+plt.subplot(211)
+plt.plot( t, pos1, color = 'red', label = 'Euler')
+plt.legend()
+plt.show()
+
+"""
+
 def euler(f,h, NUMBER_OF_STEPS):
     y1 = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
     y2 = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
@@ -83,7 +125,7 @@ def euler(f,h, NUMBER_OF_STEPS):
 
     return (pos, vel, t)
 
-"""
+
 
 h = 0.5
 NS = 200
