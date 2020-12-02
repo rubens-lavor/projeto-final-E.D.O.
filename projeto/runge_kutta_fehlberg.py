@@ -118,6 +118,7 @@ def EDO_rkf_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01, alpha = 0.86, tol =
     velocidade = r[:,0] - r[:,2]
     return (t, posicao, velocidade)
 
+"""
 t, r = EDO_rkf_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 
 pos1 = r[:,1] - r[:,3]
@@ -128,3 +129,4 @@ plt.plot( t, pos1, color = 'g', label = 'Runge-Kutta-Fehlberg')
 plt.legend()
 
 plt.show()
+"""
