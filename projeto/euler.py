@@ -81,7 +81,8 @@ def EDO_euler_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
         t[n+1] = t[n]+h
         K1 = f(t[n], r[n])
         r[n+1] = r[n] + K1*h
-
+        #y[n+1] == r[n+1], calculado acima.
+        
     return (t, r)
 
 t, r = EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
