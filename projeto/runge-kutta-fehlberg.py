@@ -112,7 +112,7 @@ def EDO_rkf_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01, alpha = 0.86, tol =
         t[n+1] = t[n]+h
         r[n+1] = y5
         h = q_minimo*h
-        print ("h =", h)
+        #print ("h =", h)
 
     return (t, r)
 
@@ -122,7 +122,7 @@ pos1 = r[:,1] - r[:,3]
 vel1 = r[:,0] - r[:,2]
 
 plt.subplot(211)
-plt.plot( t, pos1, color = 'g', label = 'Runge-Kutta-F')
+plt.plot( t, pos1, color = 'g', label = 'Runge-Kutta-Fehlberg')
 plt.legend()
 
 plt.show()
