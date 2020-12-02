@@ -12,7 +12,7 @@ automóvel
 import numpy as np
 import matplotlib.pylab as plt
 import math as mt
-import euler
+
 
 def rt(t):
     return (1/10 * mt.exp(-(t-10)**2/7))
@@ -27,7 +27,7 @@ def f(x1, x2, x3, x4, t):
 
     return(y1, dy1, y2, dy2)
 
-"""
+
 def euler(h, NUMBER_OF_STEPS):
     x1 = np.zeros(NUMBER_OF_STEPS)
     x2 = np.zeros(NUMBER_OF_STEPS)
@@ -55,7 +55,7 @@ def euler(h, NUMBER_OF_STEPS):
     vel = x1 - x3
 
     return (pos, vel, t)
-"""
+
 
 def eulermelhorado(h, NUMBER_OF_STEPS):
 
@@ -217,7 +217,7 @@ def rungekuttafehlberg(h, NUMBER_OF_STEPS):
 h = 0.5
 NS = 200
 
-vet1 = euler.euler(f,h, NS)
+vet1 = euler(h, NS)
 pos1 = vet1[0]
 tempo = vet1[2]
 vel1 = vet1[1]
