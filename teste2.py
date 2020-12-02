@@ -135,6 +135,7 @@ def rungekutta(h, NUMBER_OF_STEPS):
 
 def rungekuttafehlberg(h, NUMBER_OF_STEPS):
 
+    cont = 0
     x1 = np.zeros(NUMBER_OF_STEPS)
     x2 = np.zeros(NUMBER_OF_STEPS)
     x3 = np.zeros(NUMBER_OF_STEPS)
@@ -208,9 +209,11 @@ def rungekuttafehlberg(h, NUMBER_OF_STEPS):
                 status = 1
 
             h = h2
+            cont  = cont +1
 
     pos = x2 - x4
     vel = x1 - x3
+    print ("cont = ",cont)
     return (pos, vel)
 
 
@@ -235,7 +238,7 @@ plt.subplot(211)
 plt.plot( tempo, pos1, color = 'red', label = 'Euler')
 plt.plot (tempo, pos2, color = 'green', label = 'Euler Melhorado')
 plt.plot(tempo, pos3, color='blue', label='Runge-Kutta')
-plt.plot(tempo, pos3, color='yellow', label='Runge-Kutta-Fehlberg')
+#plt.plot(tempo, pos4, color='yellow', label='Runge-Kutta-Fehlberg')
 plt.legend()
 plt.title('POSIÇÃO PERCEBIDA PELA MOLA ks')
 plt.xlabel('tempo (s)')
@@ -246,7 +249,7 @@ plt.subplot(212)
 plt.plot(tempo, vel1, color='red', label='Euler')
 plt.plot(tempo, vel2, color='green', label='Euler Melhorado')
 plt.plot(tempo, vel3, color='blue', label='Runge-Kutta')
-plt.plot(tempo, vel3, color='yellow', label='Runge-Kutta-Fehlberg')
+#plt.plot(tempo, vel4, color='yellow', label='Runge-Kutta-Fehlberg')
 plt.xlabel('tempo (s)')
 plt.ylabel('velocidade (m/s)')
 plt.title('VELOCIDADE PERCEBIDA PELA MOLA ks')
