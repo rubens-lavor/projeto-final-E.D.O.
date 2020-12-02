@@ -4,7 +4,6 @@
 
 import numpy as np
 import matplotlib.pylab as plt
-
 import math as mt  # função rt(t) usa exponencial
 
 
@@ -14,6 +13,9 @@ Exemplo:
 # EDO a ser resolvida:
 # y' = 1 - t + 4y
 # y(0) = 1
+
+K1 = f(t_n,y_n)
+y_{n+1} = y_n + K1*h
 
 def f(t, y):  # FUNÇÃO QUE DEFINE A EDO (derivada)
     return 1 - t + 4*y
@@ -35,12 +37,14 @@ def EDO_euler(f, y0, t0, NUMBER_OF_STEPS=200, h=0.01):
 
     return (t, y)
 """
+
+
 """
 def rt(t):  # O que é essa função?
     return (1/10 * mt.exp(-(t-10)**2/7))
 
 
-def f1(x1, x2, x3, x4, t):  # FUNÇÃO QUE DEFINE A EDO (derivada)
+def f(x1, x2, x3, x4, t):  # FUNÇÃO QUE DEFINE A EDO (derivada)
     y1 = x2
     dy1 = -(7.5 + 50) / 25 * x1 - 30/25 * x2 + \
         7.5/25 * x3 + 30/25 * x4 + 50/25 * rt(t)
@@ -50,7 +54,7 @@ def f1(x1, x2, x3, x4, t):  # FUNÇÃO QUE DEFINE A EDO (derivada)
     return(y1, dy1, y2, dy2)
 """
 
-def euler(f1,h, NUMBER_OF_STEPS):
+def euler(f,h, NUMBER_OF_STEPS):
     y1 = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
     y2 = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
     y3 = np.zeros(NUMBER_OF_STEPS, dtype=np.float32)
@@ -67,7 +71,7 @@ def euler(f1,h, NUMBER_OF_STEPS):
     #t[0] = 0
 
     for n in range(0, NUMBER_OF_STEPS-1):
-        K1 = f1(y1[n], y2[n], y3[n], y4[n], t[n])
+        K1 = f(y1[n], y2[n], y3[n], y4[n], t[n])
         y1[n+1] = y1[n] + K1[0] * h
         y2[n+1] = y2[n] + K1[1] * h
         y3[n+1] = y3[n] + K1[2] * h
