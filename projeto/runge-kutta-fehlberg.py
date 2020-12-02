@@ -149,7 +149,7 @@ def rungekuttafehlberg(f, h, NUMBER_OF_STEPS):
                     h1 = h * q[i]
                     if (h1 < h2):
                         h2 = h1
-                    status = 0
+                    status = 1
 
             if (h == h2):
                 h2 = h * q[0]
@@ -157,7 +157,7 @@ def rungekuttafehlberg(f, h, NUMBER_OF_STEPS):
                     h1 = h * q[i]
                     if (h1 < h2):
                         h2 = h1
-                status = 1
+                status = 0
 
             h = h2
 
