@@ -87,6 +87,8 @@ def EDO_euler_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
     velocidade = r[:,0] - r[:,2]
     return (t, posicao, velocidade)
 
+
+"""
 t, pos1, vel1 = EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 
 #pos1 = r[:,1] - r[:,3]
@@ -96,6 +98,7 @@ plt.subplot(211)
 plt.plot( t, pos1, color = 'red', label = 'Euler')
 plt.legend()
 plt.show()
+"""
 
 """
 
