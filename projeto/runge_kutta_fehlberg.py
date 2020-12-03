@@ -3,22 +3,14 @@ import numpy as np
 import math as mt
 
 """
-E[n+1] = abs((y4[n+1] - y5[n+1])/h)
-E[n+1] = cte*h^k
+Entendenddo o método:
+---------------------
 
-Ê[n+1] = cte*(q*h)^k = q^k * cte*h^k = q^k *E[n+1]
-
-Ê[n+1] = q^k *E[n+1]
-
-Ê[n+1] < tolerancia
-
-portanto:
-q^k * abs((y4[n+1] - y5[n+1])/h) < tolerancia
-
-q = alpha*((tolerancia*h)/abs(y4[n+1] - y5[n+1]))**(1/k)
+q = alpha*((tolerancia*h)/abs(y4 - y5))**(1/k)
 
 onde:
 alpha < 1
+k é a ordem da edo
 
 
 Se q < 1 é preciso reduzir o passo(h) original para ter o erro
@@ -27,48 +19,7 @@ abaixo da tolerância, logo o passo y[n+1] precisa ser refeito.
 Se q > 1 pode-se aumentar o passo(h) que o erro ainda ficará menor que 
 a tolerância
 
-K1 = f(t[n],y[n])
-K2 = f(t[n] +   (1/4)*h, y[n] + h*(1/4)*K1)
-K3 = f(t[n] +   (3/8)*h, y[n] + h*((3*K1 + 9*K2)/32))
-K4 = f(t[n] + (12/13)*h, y[n] + h*((1932*K1 - 7200*K2 + 7296*K3)/2197))
-
-K5 = f(t[n] + h, y[n] + h*((439/216)*K1 - 8*K2 + (3680/513)*K3 - (845/4104)*K4)
-K6 = f(t[n] + (1/2)*h, y[n] + h*(-(8/27)*K1 + 2*K2 - (3544/2565)*K3 + (1859/4104)*K4 - (11/40)*K5)
-
-
-y4[n+1] = y[n] + ((25/216)*K1 + (1408/2565)*K3 + (2197/4104)*K4 - (1/5)*K5)*h
-
-y5[n+1] = y[n] + ((16/135)*K1 + (6656/12825)*K3 + (28561/56430)*K4 - (9/50)*K5 + (2/55)*K6)*h
-
----------------------
-
-K1 = f(t[n],r[n])
-K2 = f(t[n] +   (1/4)*h, r[n] + h*(1/4)*K1)
-K3 = f(t[n] +   (3/8)*h, r[n] + h*((3*K1 + 9*K2)/32))
-K4 = f(t[n] + (12/13)*h, r[n] + h*((1932*K1 - 7200*K2 + 7296*K3)/2197))
-
-K5 = f(t[n] + h, r[n] + h*((439/216)*K1 - 8*K2 + (3680/513)*K3 - (845/4104)*K4)
-K6 = f(t[n] + (1/2)*h, r[n] + h*(-(8/27)*K1 + 2*K2 - (3544/2565)*K3 + (1859/4104)*K4 - (11/40)*K5)
-
-
-y4[n+1] = r[n] + ((25/216)*K1 + (1408/2565)*K3 + (2197/4104)*K4 - (1/5)*K5)*h
-
-y5[n+1] = r[n] + ((16/135)*K1 + (6656/12825)*K3 + (28561/56430)*K4 - (9/50)*K5 + (2/55)*K6)*h
-
 """
-
-def rt(t):
-    return (1/10 * mt.exp(-(t-10)**2/7))
-
-def f(t,r):
-    x1,x2,x3,x4 = r
-
-    y1 = x2
-    dy1 = -(7.5 + 50) / 25 * x1 - 30/25 * x2 + 7.5/25 * x3 + 30/25 * x4 + 50/25 * rt(t)
-    y2 = x4
-    dy2 = -7.5/300 * x1 + 30/300 * x2 - 7.5/300 * x3 - 30 / 300 * x4
-
-    return np.array([y1, dy1, y2, dy2])
 
 
 def EDO_rkf_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01, alpha = 0.86, tol = 0.00001, k = 4):
@@ -114,19 +65,5 @@ def EDO_rkf_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01, alpha = 0.86, tol =
         h = q_minimo*h
         #print ("h =", h)
 
-    posicao = r[:,1] - r[:,3]
-    velocidade = r[:,0] - r[:,2]
-    return (t, posicao, velocidade)
 
-"""
-t, r = EDO_rkf_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
-
-pos1 = r[:,1] - r[:,3]
-vel1 = r[:,0] - r[:,2]
-
-plt.subplot(211)
-plt.plot( t, pos1, color = 'g', label = 'Runge-Kutta-Fehlberg')
-plt.legend()
-
-plt.show()
-"""
+    return (t, r)
