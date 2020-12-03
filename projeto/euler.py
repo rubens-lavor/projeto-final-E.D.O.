@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pylab as plt
-import math as mt
-
 
 """
 K1 = f(t_n,y_n)

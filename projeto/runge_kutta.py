@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pylab as plt
-import math as mt
-
 
 def EDO_rk_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
     NUMBER_OF_EQUATIONS = len(r0)
