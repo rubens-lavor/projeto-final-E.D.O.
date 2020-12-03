@@ -22,12 +22,25 @@ def f(t,r):
     return np.array([y1, dy1, y2, dy2])
 
 
-t, pos1, vel1 = euler.EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
-tempo = t
 
-t, pos2, vel2 = heun.EDO_heun_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
-t, pos3, vel3 = rk.EDO_rk_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
-t, pos4, vel4 = rkf.EDO_rkf_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+
+t, r = euler.EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+tempo = t
+pos1 = r[:,1] - r[:,3]
+vel1 = r[:,0] - r[:,2]
+
+t, r = heun.EDO_heun_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+pos2 = r[:,1] - r[:,3]
+vel2 = r[:,0] - r[:,2]
+
+
+t, r = rk.EDO_rk_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+pos3 = r[:,1] - r[:,3]
+vel3 = r[:,0] - r[:,2]
+
+t, r = rkf.EDO_rkf_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
+pos4 = r[:,1] - r[:,3]
+vel4 = r[:,0] - r[:,2]
 
 
 plt.subplot(211)
