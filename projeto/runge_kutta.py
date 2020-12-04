@@ -17,6 +17,6 @@ def EDO_rk_sistemas(f, r0, t0, NUMBER_OF_STEPS=100, h=0.01):
         K3 = f(t[n] + (1/2)*h , r[n] + (1/2)*K2*h)
         K4 = f(t[n+1] , r[n] + K3*h)
 
-        r[n+1]=r[n]+(1/6)*(K1 + 2*K2 + 2*K3 + K4)
+        r[n+1]=r[n]+(1/6)*h*(K1 + 2*K2 + 2*K3 + K4)
 
     return (t, r)
