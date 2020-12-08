@@ -65,6 +65,5 @@ plt.title('VELOCIDADE PERCEBIDA PELA MOLA ks')
 plt.legend()
 
 plt.rcParams['figure.figsize'] = (15, 10)
-# plt.savefig('grafico.png')
 
 plt.show()
