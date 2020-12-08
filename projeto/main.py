@@ -7,7 +7,7 @@ import heun
 import runge_kutta as rk
 import runge_kutta_fehlberg as rkf
 
-"""
+
 def rt(t):
     return (1/10 * mt.exp(-(t-10)**2/7))
 
@@ -22,33 +22,7 @@ def f(t,r):
 
     return np.array([y1, dy1, y2, dy2])
 
-"""
 
-def f(t, r):
-    x, y = r
-    a = 1.1
-    b = 0.4
-    c = 0.4
-    d = 0.1
-
-    return np.array([ a*x - b*x*y, -c*y + d*x*y ])
-
-
-#t, r = euler.EDO_euler_sistemas(f,(10,10),0,NUMBER_OF_STEPS=100, h=0.05)
-#t, r = heun.EDO_heun_sistemas(f,(10,10),0,NUMBER_OF_STEPS=100, h=0.05)
-#t, r = rk.EDO_rk_sistemas(f,(10,10),0,NUMBER_OF_STEPS=100, h=0.05)
-t, r = rkf.EDO_rkf_sistemas(f,(10,10),0,NUMBER_OF_STEPS=200, h=0.05)
-x = r[:,0]
-y = r[:,1]
-
-plt.plot(t,x)
-plt.plot(t,y)
-
-plt.show()
-
-
-
-"""
 
 t, r = euler.EDO_euler_sistemas(f,(0,0,0,0),0,NUMBER_OF_STEPS=200, h=0.5)
 tempo = t
@@ -94,5 +68,3 @@ plt.rcParams['figure.figsize'] = (15, 10)
 # plt.savefig('grafico.png')
 
 plt.show()
-
-"""
